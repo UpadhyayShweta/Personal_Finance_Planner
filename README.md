@@ -4,11 +4,11 @@
 
 ## Background
 
-You decided to start a FinTech consultancy firm, and you want to make a difference by working on projects with high social impact in local communities. You just won your first contract to help one of the biggest credit unions in your area. They want to create a tool that helps their members enhance their financial health. The Chief Technology Officer (CTO) of the credit union asked you to develop a prototype application to demo in the next credit union assembly.
+Post start a FinTech consultancy firm, we just won our first contract to help one of the biggest credit unions in our area. They want to create a tool that helps their members enhance their financial health. The Chief Technology Officer (CTO) of the credit union asked you to develop a prototype application to demo in the next credit union assembly.
 
 The credit union board wants to allow the union's members to assess their monthly personal finances, and also be able to forecast a reasonably good retirement plan based on cryptocurrencies, stocks, and bonds.
 
-In this homework activity, you will use all the skills you have learned until now - focusing on using APIs as part of the technical solution - to create two financial analysis tools.
+In this activity, we will use all the skills - focusing on using APIs as part of the technical solution - to create two financial analysis tools.
 
 The first will be a personal finance planner that will allow users to visualize their savings composed by investments in shares and cryptocurrencies to assess if they have enough money as an emergency fund.
 
@@ -18,15 +18,15 @@ The second tool will be a retirement planning tool that will use the Alpaca API 
 
 ### Files
 
-* [Personal Finance Planner starter code](Starter_Code/financial-planner.ipynb)
+* [Personal Finance Planner starter code](financial-planner.ipynb)
 
-* [MCForecastTools toolkit](Starter_Code/MCForecastTools.py)
+* [MCForecastTools toolkit](MCForecastTools.py)
 
 ---
 
 ### Resources
 
-This homework will utilize two APIs:
+This activity will utilize two APIs:
 
 * The **Alpaca Markets API** will be used to pull historical stocks and bonds information.
 
@@ -43,7 +43,7 @@ The documentation for these APIs can be found via the following links:
 
 ### Part 1 - Personal Finance Planner
 
-In this section of the challenge, you will create a personal finance planner application. To develop the personal finance planner prototype, you should take into account the following assumptions:
+In this section of the challenge, we will create a personal finance planner application. To develop the personal finance planner prototype, taking into account the following assumptions:
 
 * The average household income for each member of the credit union is $12,000.
 
@@ -53,13 +53,13 @@ In this section of the challenge, you will create a personal finance planner app
 
     * Assume the following amount of shares in stocks and bonds: `50` SPY (stocks) and `200` AGG (bonds).
 
-Use the starter Jupyter notebook to complete the following steps.
+
 
 #### Collect Crypto Prices Using the `requests` Library
 
 1. Create two variables called `my_btc` and `my_eth`. Set them equal to `1.2` and `5.3`, respectively.
 
-2. Use the `requests` library to fetch the current price in Canadian dollars (`CAD`) of bitcoin (`BTC`) and ethereum (`ETH`) using the **Alternative Free Crypto API** endpoints provided in the starter notebook.
+2. Use the `requests` library to fetch the current price in Canadian dollars (`CAD`) of bitcoin (`BTC`) and ethereum (`ETH`) using the **Alternative Free Crypto API** endpoints.
 
 3. Parse the API JSON response to select only the crypto prices and store each price in a variable.
 
@@ -69,7 +69,7 @@ Use the starter Jupyter notebook to complete the following steps.
 
 #### Collect Investments Data Using Alpaca: `SPY` (stocks) and `AGG` (bonds)
 
-**Important:** Remember to create a `.env` file in your working directory to store the values of your Alpaca API key and Alpaca secret key.
+**Important:** Remember to create a `.env` file in your working directory to store the values of your Alpaca API key and Alpaca secret key(to securely use the API keys).
 
 1. Create two variables named `my_agg` and `my_spy` and set them equal to `200` and `50`, respectively.
 
@@ -85,15 +85,11 @@ Use the starter Jupyter notebook to complete the following steps.
 
 #### Savings Health Analysis
 
-In this section, you will assess the financial health of the credit union's members.
+In this section, we will assess the financial health of the credit union's members.
 
 1. Create a variable called `monthly_income` and set its value to `12000`.
 
-2. To analyze savings health, create a DataFrame called `df_savings` with two rows. Store the total value in dollars of the crypto assets in the first row and the total value of the shares in the second row.
-
-    **Hint:** The `df_savings` DataFrame should have one column named `amount` and two rows where `crypto` and `shares` are the index values:
-
-    ![df_savings](Images/df_savings.png)
+2. To analyze savings health, create a DataFrame called `df_savings` and use it to store the total value in dollars of the crypto assets in and the total value of the shares.
 
 3. Use the `df_savings` DataFrame to plot a pie chart to visualize the composition of personal savings.
 
@@ -107,9 +103,8 @@ In this section, you will assess the financial health of the credit union's memb
 
 ### Part 2 - Retirement Planning
 
-In this section, you will use the Alpaca API to fetch historical closing prices for a retirement portfolio and then Use the MCForecastTools toolkit to create Monte Carlo simulations to project the portfolio performance at `30` years. You will then use the Monte Carlo data to answer questions about the portfolio.
+In this section, we will use the Alpaca API to fetch historical closing prices for a retirement portfolio and then Use the MCForecastTools toolkit to create Monte Carlo simulations to project the portfolio performance at `30` years. We will then use the Monte Carlo data to answer questions about the portfolio.
 
-Follow the steps outlined in the starter notebook to complete the following:
 
 #### Monte Carlo Simulation
 
@@ -135,79 +130,9 @@ Follow the steps outlined in the starter notebook to complete the following:
 
 ### Optional Challenge - Early Retirement
 
-The CTO of the Credit Union was really impressed with your work on this planner, but commented that `30` years seems like such a long time to wait to retire! The CTO starts wondering if the retirement plan could be adjusted to account for an earlier than normal retirement.
+The CTO of the Credit Union was really impressed with our work on this planner, but commented that `30` years seems like such a long time to wait to retire! The CTO starts wondering if the retirement plan could be adjusted to account for an earlier than normal retirement.
 
-Try adjusting the portfolio to either include more risk (a higher stock than bond ratio) or to have a larger initial investment and rerun the retirement analysis to see what it would take to retire in `5` or `10` years instead of `30`!
-
----
-
-### Hints and Considerations
-
-* To allow for quicker work during the Monte Carlo simulation, start out by running `100` simulations for one year of returns, and when you have the code worked out, run the full `500` simulations for `30` years.
-
-* Remember to add the `.env` files to the `.gitignore` configuration to avoid exposing your API keys in your GitHub repository.
-
-* A `.gitignore` file contains file names and extensions of files that you don't want pushed to your repository. For more information on how a `gitignore` works, you can read the documentation [here](https://docs.github.com/en/github/using-git/ignoring-files).
-
-### Submission
-
-1. Use the starter Jupyter Notebook for your Personal Finance Planner.
-
-2. Submit your notebook to a new GitHub repository and create a `README.md` file.
-
-3. Submit the link to your GitHub project to Bootcampspot for grading.
+After adjusting the portfolio to either include more risk (a higher stock than bond ratio) or to have a larger initial investment and rerun the retirement analysis to see what it would take to retire in `5` or `10` years instead of `30` we came to analysis that increasing the bond to stock ratio can help retire earlier.
 
 ---
 
-### Requirements
-
-#### Personal Finance Planner  (35 points)
-
-##### To receive all points, your code must:
-
-* Collect crypto prices using the requests Library. (10 points)
-* Collect investments data using Alpaca: SPY (stocks) and AGG (bonds). (10 points)
-* Perform a savings health analysis. (15 points)
-
-
-#### Retirement Planning (35 points)
-
-##### To receive all points, your code must:
-
-* Complete a Monte Carlo Simulation with 500 runs. (15 points)
-* Plot the Monte Carlo simulation results. (5 points)
-* Plot the probability distribution and confidence intervals. (5 points)
-* Complete the retirement analysis. (10 points)
-
-#### Optional Bonus (10 points)
-
-##### To receive all bonus points, your code must:
-
-* Optional: Adjust the portfolio to reflect an early retirement and rerun the analysis to show either a higher stock than bond ratio, or to have a higher initial investment. (10 points)
-
-#### Coding Conventions and Formatting (10 points)
-
-##### To receive all points, your code must:
-
-* Place imports at the beginning of the file, just after any module comments and docstrings and before module globals and constants. (3 points)
-* Name functions and variables with lowercase characters and with words separated by underscores. (2 points)
-* Follow Don't Repeat Yourself (DRY) principles by creating maintainable and reusable code. (3 points)
-* Use concise logic and creative engineering where possible. (2 points)
-
-#### Deployment and Submission (10 points)
-
-##### To receive all points, you must:
-
-* Submit a link to a GitHub repository that’s cloned to your local machine and contains your files. (5 points)
-* Include appropriate commit messages in your files. (5 points)
-
-#### Code Comments (10 points)
-
-##### To receive all points, your code must:
-
-* Be well commented with concise, relevant notes that other developers can understand. (10 points)
-
-
----
-
-© 2022 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
